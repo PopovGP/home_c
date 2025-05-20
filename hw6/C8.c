@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+char toUpper(char c)
+{
+    if ((c>='a')&&(c<='z'))
+        
+            c = c - 32;
+            
+    return c;
+}
+    
 int main(int argc, char**argv)
 {
     char c;
@@ -8,10 +17,9 @@ int main(int argc, char**argv)
         scanf("%c", &c);
         if (c=='.') break;
         
-        if ((c>=0x41)&&(c<=0x5A))
-        {
-            c = c + 32;
-        }
+        c = toUpper(c);
+        
+        
         printf("%c", c);
         
     } 
