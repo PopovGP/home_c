@@ -22,32 +22,37 @@ void PrintArray(ARRAY_TYPE arr[])
 void Calc(ARRAY_TYPE arr[])
 {
     
-    int temp1 = arr[0];
-    int temp2; 
-    int index = 0;
-    
-    
+  
+        
+ 
+     int tempCounter = 0;
+     int x,y;  
+        
     for (int i=0; i<SIZE; i++)
     {
-        
-        
-        index = index == SIZE - 1 ? 0: index+1;
-        //printf("i= %d index=%d\n", i, index);
-        
-        
-        temp2 = arr[index];
-        
-       
-        
-        arr[index] = temp1;
-        
-        temp1 = temp2;
-        
-    
-        
          
+         x = arr[i];
+         
+         tempCounter = 0;
         
-    }
+       for(int k=0; k<SIZE; k++)
+       {
+			y = arr[k];
+			if (x == y) {tempCounter ++; }
+			
+           
+           
+       }
+       if (tempCounter==1) 
+	   {
+			
+			printf("%d ", x);
+	   }
+		
+         
+}
+	
+
     
   
     
@@ -60,7 +65,7 @@ int main(int argc, char *argv[])
     ARRAY_TYPE arr[SIZE];
     ReadArray(arr);
     Calc(arr);
-    PrintArray(arr);
+    
     
     return 0;
 }
