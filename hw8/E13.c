@@ -27,7 +27,7 @@ void Calc(ARRAY_TYPE arr[], ARRAY_TYPE newArr[], int *counter)
     for (int i=0; i<SIZE; i++)
     {
         x = arr[i];
-        if (x<100) continue;
+       // if (x<100) continue;
         if ((x/10)%10==0)
         {
             newArr[*counter] = x;

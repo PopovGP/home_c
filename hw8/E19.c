@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     
     while(1)
     {
-        printf("%lld \n", N/digits);
+       // printf("%lld \n", N/digits);
         if (N/digits==0)
         {
             digits = digits / 10;
@@ -28,9 +28,11 @@ int main(int argc, char **argv)
         
     while(1)
     {
-        printf("%llu %llu\n", N/digits, N%digits);
+      //  printf("%llu %llu\n", N/digits, N%digits);
+        printf("%llu ", N/digits);
+        N = N%digits;
         digits = digits/10;
-        if (digits == 1) break;
+        if (digits == 0) break;
     }
     
     return 0;
