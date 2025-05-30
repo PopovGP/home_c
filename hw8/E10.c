@@ -21,36 +21,37 @@ void PrintArray(ARRAY_TYPE arr[])
 
 void Calc(ARRAY_TYPE arr[])
 {
+ 
     
-    int temp1 = arr[0];
+    for (int j=0; j<4; j++)
+    {
+       int temp1 = arr[0];
     int temp2=0;
-    int index = 3 ;
-    
+    int index = 0; 
     
     for (int i=0; i<SIZE; i++)
     {
         
         
-        index = index == SIZE - 1  ? 0: index + 1;
-        printf("i= %d index=%d %d %d\n" , i, index, temp1, temp2);
+        index = (index == (SIZE - 1)  ? 0: index + 1);
+       // printf("i= %d index=%d %d %d\n" , i, index, temp1, temp2);
         
-        PrintArray(arr);
-        printf("\n");
+        //PrintArray(arr);
+       // printf("\n");
         
         temp2 = arr[index];
-        
-       
-        
+
         arr[index] = temp1;
         
         temp1 = temp2;
-        PrintArray(arr);
-        printf("i= %d index=%d %d %d\n\n" , i, index, temp1, temp2);
+       // PrintArray(arr);
+       // printf("i= %d index=%d %d %d\n\n" , i, index, temp1, temp2);
     
         
          
         
     }
+}
     
   
     
