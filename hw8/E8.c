@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define SIZE 10
+#define SIZE 12
 #define ARRAY_TYPE int
 
 void ReadArray(ARRAY_TYPE arr[])
@@ -24,15 +24,17 @@ void Calc(ARRAY_TYPE arr[])
  
     
  
-       int temp = arr[0];
-   
+       int temp ;
+ 
     int index = 0; 
+    int offset = 0;
     
-    for (int i=0; i<SIZE; i++)
+ 
+    for (int i=0; i<SIZE/3/2; i++)
     {
         
-        if (i<SIZE/2/2){
-        index = SIZE/2 - 1 - i;
+        
+        index = SIZE/3 - 1 - i;
         
        // printf("i= %d index=%d %d %d\n" , i, index, temp1, temp2);
         
@@ -45,14 +47,21 @@ void Calc(ARRAY_TYPE arr[])
         
         arr[index] = temp;
         
-        temp = arr[i+SIZE/2];
+        temp = arr[i+SIZE/3];
 
-        arr[i+SIZE/2] = arr[index+SIZE/2];
+        arr[i+SIZE/3] = arr[index+SIZE/3];
         
-        arr[index+SIZE/2] = temp;
+        arr[index+SIZE/3] = temp;
         
-    }
-        printf("%d ", arr[i]);
+        
+        temp = arr[i+SIZE/3*2];
+
+        arr[i+SIZE/3*2] = arr[index+SIZE/3*2];
+        
+        arr[index+SIZE/3*2] = temp;
+        
+        
+        
         
        // PrintArray(arr);
        // printf("i= %d index=%d %d %d\n\n" , i, index, temp1, temp2);
@@ -72,9 +81,10 @@ void Calc(ARRAY_TYPE arr[])
 int main(int argc, char *argv[])
 {
     ARRAY_TYPE arr[SIZE];
+  
     ReadArray(arr);
     Calc(arr);
-   // PrintArray(arr);
+    PrintArray(arr);
     
     return 0;
 }
