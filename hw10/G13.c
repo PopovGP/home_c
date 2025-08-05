@@ -3,11 +3,6 @@
 #define FIN "input.txt"
 #define FOUT "output.txt"
 
-
-
-
-
-                
 int main(int argc, char **argv)
 {
     FILE *fin = fopen(FIN, "r");
@@ -16,41 +11,28 @@ int main(int argc, char **argv)
     int dotPostion = 0;
     int slashPosition = 0;
     char c;
-  
-  
      
     while((c=fgetc(fin))!=EOF)
     {
-        
         if (c=='.')
         {
-            dotPostion = ftell(fin);//fseek(fin, 0, SEEK_CUR);
+            dotPostion = ftell(fin);
         }
         
         if (c=='/')
         {
-            slashPosition = ftell(fin);// fseek(fin, 0, SEEK_CUR);
+            slashPosition = ftell(fin);
         }
         
-        
         if (c=='\n'||c=='\r') continue;
-        
-       
-       
     }
-    
-   // printf("dotpos = %d, slashpos = %d\n", dotPostion, slashPosition);
-    
-    
-    
     
     fseek(fin, 0, SEEK_SET);
     int curPostion = 0;
     
-      while((c=fgetc(fin))!=EOF)
+    while((c=fgetc(fin))!=EOF)
     {
         
- 
         if (c=='\n'||c=='\r') continue;
         curPostion = ftell(fin);
         
@@ -59,9 +41,9 @@ int main(int argc, char **argv)
         
             if (curPostion == dotPostion)
             {
-            fputs(".html", fout);
-            break;
-        }
+                fputs(".html", fout);
+                break;
+            }
         
         }
         
@@ -73,26 +55,16 @@ int main(int argc, char **argv)
     if (dotPostion==0) 
     {
         fputs(".html", fout);
-     
-        
     }
     else
      
         if (dotPostion<slashPosition)//есть какое-то расширение
         {
-        
             fputs(".html", fout);
            
         }
-        
-      
-        
     
-     fclose(fin);
-     
-  
-
-
+    fclose(fin);
     fclose(fout);
     
     return 0;
