@@ -1,0 +1,4 @@
+bar = Hello $(bar)
+
+all:
+    echo $(bar)

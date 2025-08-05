@@ -1,0 +1,10 @@
+all: hello
+
+hello: one.o
+	gcc one.o -o one.run
+
+
+clean:
+	rm -rf *.o *.run
+
+

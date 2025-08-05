@@ -1,0 +1,2 @@
+b.o: b.c
+	gcc -c b.c -o b.o

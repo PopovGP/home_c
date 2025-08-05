@@ -1,0 +1,11 @@
+all: prog
+
+prog: action1
+
+action1: action2
+
+action2:
+	ls
+	echo "Hi!"
+	@echo "Again"
+

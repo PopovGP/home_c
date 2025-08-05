@@ -1,0 +1,5 @@
+one.o: one.c
+	echo $@ $< $^
+
+one.c:
+	echo "!" $@ $< $^
