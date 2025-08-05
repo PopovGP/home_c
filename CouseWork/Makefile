@@ -31,5 +31,5 @@ $(OTHER_OBJECTS): $(OTHER_SOURCES) $(OTHER_HEADERS)
 
 .PHONY: clean
 clean:
-	$(RM) *.o
+	$(RM) *.o $(EXECUTABLE)
 
